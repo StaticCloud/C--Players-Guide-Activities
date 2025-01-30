@@ -1,0 +1,33 @@
+# Build directories
+bin/
+obj/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+*.csproj.user
+
+# Logs
+*.log
+
+# NuGet packages
+packages/
+*.nupkg
+project.lock.json
+.nuget/
+
+# Rider / JetBrains files
+.idea/
+*.sln.iml
+
+# Resharper / Rider settings
+*.DotSettings.user
+
+# Exclude compiled DLLs (if not manually added)
+*.dll
+*.exe
+*.pdb
+
+# Ignore environment-specific config files
+appsettings.*.json
