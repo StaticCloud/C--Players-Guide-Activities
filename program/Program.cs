@@ -2,4 +2,7 @@
 // DefenseOfConsolas defenseOfConsolas = new DefenseOfConsolas();
 
 // Level 9 Challenge
-RepairingTheClocktower repairingTheClocktower = new RepairingTheClocktower();
+// RepairingTheClocktower repairingTheClocktower = new RepairingTheClocktower();
+
+// Level 9 Challenge
+Watchtower watchtower = new Watchtower();
