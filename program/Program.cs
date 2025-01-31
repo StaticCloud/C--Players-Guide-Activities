@@ -5,4 +5,7 @@
 // RepairingTheClocktower repairingTheClocktower = new RepairingTheClocktower();
 
 // Level 9 Challenge
-Watchtower watchtower = new Watchtower();
+// Watchtower watchtower = new Watchtower();
+
+// Level 10 Challenge
+BuyingInventory buyingInventory = new BuyingInventory();
