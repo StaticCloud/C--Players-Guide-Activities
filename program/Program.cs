@@ -8,4 +8,7 @@
 // Watchtower watchtower = new Watchtower();
 
 // Level 10 Challenge
-BuyingInventory buyingInventory = new BuyingInventory();
+// BuyingInventory buyingInventory = new BuyingInventory();
+
+// Level 11 Challenge
+ThePrototype thePrototype = new ThePrototype();
