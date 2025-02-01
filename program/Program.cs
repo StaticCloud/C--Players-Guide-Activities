@@ -11,4 +11,7 @@
 // BuyingInventory buyingInventory = new BuyingInventory();
 
 // Level 11 Challenge
-ThePrototype thePrototype = new ThePrototype();
+// ThePrototype thePrototype = new ThePrototype();
+
+// Level 11 Challenge
+TheMagicCannon theMagicCannon = new TheMagicCannon();
