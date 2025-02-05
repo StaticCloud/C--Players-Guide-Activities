@@ -14,4 +14,7 @@
 // ThePrototype thePrototype = new ThePrototype();
 
 // Level 11 Challenge
-TheMagicCannon theMagicCannon = new TheMagicCannon();
+// TheMagicCannon theMagicCannon = new TheMagicCannon();
+
+// Level 12 Challenge
+ReplicatorOfDto replicatorOfDto = new ReplicatorOfDto();
