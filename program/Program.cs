@@ -17,4 +17,7 @@
 // TheMagicCannon theMagicCannon = new TheMagicCannon();
 
 // Level 12 Challenge
-ReplicatorOfDto replicatorOfDto = new ReplicatorOfDto();
+// ReplicatorOfDto replicatorOfDto = new ReplicatorOfDto();
+
+// Level 12 Challenge
+TheLawsOfFrench theLawsOfFrench = new TheLawsOfFrench();
