@@ -20,4 +20,7 @@
 // ReplicatorOfDto replicatorOfDto = new ReplicatorOfDto();
 
 // Level 12 Challenge
-TheLawsOfFrench theLawsOfFrench = new TheLawsOfFrench();
+// TheLawsOfFrench theLawsOfFrench = new TheLawsOfFrench();
+
+// Level 13 Challenge
+TakingANumber takingANumber = new TakingANumber();
