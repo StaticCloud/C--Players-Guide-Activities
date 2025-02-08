@@ -29,4 +29,7 @@
 // Countdown countdown = new Countdown();
 
 // Level 14 Boss Battle
-HuntingTheManicore huntingTheManicore = new HuntingTheManicore();
+// HuntingTheManicore huntingTheManicore = new HuntingTheManicore();
+
+// Level 16 Challenge
+SimulasTest simulasTest = new SimulasTest();
