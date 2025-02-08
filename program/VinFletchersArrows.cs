@@ -38,9 +38,9 @@
 
 class Arrow
 {
-    public ArrowHead _arrowHead;
-    public int _shaftLength;
-    public Fletching _fletching;
+    private ArrowHead _arrowHead;
+    private int _shaftLength;
+    private Fletching _fletching;
 
     public Arrow(ArrowHead arrowHead, int shaftLength, Fletching fletching)
     {
@@ -48,6 +48,12 @@ class Arrow
         _shaftLength = shaftLength;
         _fletching = fletching;
     }
+
+    public ArrowHead GetArrowHead() => _arrowHead;
+
+    public int GetShaftLength() => _shaftLength;
+
+    public Fletching GetFletching() => _fletching;
 
     public int CalculateHeadPrice() => _arrowHead == ArrowHead.steel ? 10 : (_arrowHead == ArrowHead.wood ? 3 : 5);
 
