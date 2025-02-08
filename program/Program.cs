@@ -35,4 +35,7 @@
 // SimulasTest simulasTest = new SimulasTest();
 
 // Level 17 Challenge
-SimulasSoup simulasSoup = new SimulasSoup();
+// SimulasSoup simulasSoup = new SimulasSoup();
+
+// Level 18
+VinFletchersArrows vinFletchersArrows = new VinFletchersArrows();
