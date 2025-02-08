@@ -32,4 +32,7 @@
 // HuntingTheManicore huntingTheManicore = new HuntingTheManicore();
 
 // Level 16 Challenge
-SimulasTest simulasTest = new SimulasTest();
+// SimulasTest simulasTest = new SimulasTest();
+
+// Level 17 Challenge
+SimulasSoup simulasSoup = new SimulasSoup();
