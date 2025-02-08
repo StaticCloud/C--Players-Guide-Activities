@@ -12,7 +12,7 @@
         string fletchingInput = "";
         int lengthInput = 0;
 
-        Console.Write("What type of arrowhead would you like (steel, wool, obsidian)?: ");
+        Console.Write("What type of arrowhead would you like (steel, wood, obsidian)?: ");
         arrowHeadInput = Console.ReadLine();
 
         Console.Write("What type of fletching would you like (plastic, turkey, goose)?: ");
@@ -38,28 +38,22 @@
 
 class Arrow
 {
-    private ArrowHead _arrowHead;
-    private int _shaftLength;
-    private Fletching _fletching;
+    private ArrowHead ArrowHead { get; set; }
+    private int ShaftLength { get; set; }
+    private Fletching Fletching { get; set; }
 
     public Arrow(ArrowHead arrowHead, int shaftLength, Fletching fletching)
     {
-        _arrowHead = arrowHead;
-        _shaftLength = shaftLength;
-        _fletching = fletching;
+        ArrowHead = arrowHead;
+        ShaftLength = shaftLength;
+        Fletching = fletching;
     }
 
-    public ArrowHead GetArrowHead() => _arrowHead;
+    public int CalculateHeadPrice() => ArrowHead == ArrowHead.steel ? 10 : (ArrowHead == ArrowHead.wood ? 3 : 5);
 
-    public int GetShaftLength() => _shaftLength;
+    public float CalculateShaftPrice() => (float)(ShaftLength * 0.05);
 
-    public Fletching GetFletching() => _fletching;
-
-    public int CalculateHeadPrice() => _arrowHead == ArrowHead.steel ? 10 : (_arrowHead == ArrowHead.wood ? 3 : 5);
-
-    public float CalculateShaftPrice() => (float)(_shaftLength * 0.05);
-
-    public int CalculareFletchingPrice() => _fletching == Fletching.plastic ? 10 : (_fletching == Fletching.goose ? 3 : 5);
+    public int CalculareFletchingPrice() => Fletching == Fletching.plastic ? 10 : (Fletching == Fletching.goose ? 3 : 5);
 
     public float GetCost() => CalculateHeadPrice() + CalculateShaftPrice() + CalculareFletchingPrice();
 }
