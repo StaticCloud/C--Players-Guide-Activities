@@ -3,10 +3,26 @@
 
     public VinFletchersArrows()
     {
-        init();
+        string input;
+
+        while (true)
+        {
+            Console.WriteLine("Would you like a custom or pre-defined arrow (custom or predefined)?: ");
+            input = Console.ReadLine();
+
+            if (input.ToLower() == "custom")
+            {
+                customArrow();
+                break;
+            } else if (input.ToLower() == "predefined")
+            {
+                preDefinedArrow();
+                break;
+            }
+        }
     }
 
-    public void init()
+    public void customArrow()
     {
         string arrowHeadInput = "";
         string fletchingInput = "";
@@ -30,8 +46,37 @@
         } else
         {
             Console.WriteLine("Sorry, one of your choices was invalid");
-            init();
+            customArrow();
         }
+    }
+
+    public void preDefinedArrow()
+    {
+        Console.WriteLine("Which predefined arrow would you like (Elite, Beginner or Marksman)?: ");
+
+        string input;
+        Arrow arrow;
+
+        while (true)
+        {
+            input = Console.ReadLine();
+
+            if (input.ToLower() == "elite")
+            {
+                arrow = Arrow.CreateEliteArrow();
+                break;
+            } else if (input.ToLower() == "beginner")
+            {
+                arrow = Arrow.CreateBeginnerArrow();
+                break;
+            } else if (input.ToLower() == "marksman")
+            {
+                arrow = Arrow.CreateMarksmanArrow();
+                break;
+            }
+        }
+
+        Console.WriteLine($"Your total is: {arrow.GetCost()} gold");
     }
 
 }
@@ -56,6 +101,12 @@ class Arrow
     public int CalculareFletchingPrice() => Fletching == Fletching.plastic ? 10 : (Fletching == Fletching.goose ? 3 : 5);
 
     public float GetCost() => CalculateHeadPrice() + CalculateShaftPrice() + CalculareFletchingPrice();
+
+    public static Arrow CreateEliteArrow() => new Arrow(ArrowHead.steel, 95, Fletching.plastic);
+
+    public static Arrow CreateBeginnerArrow() => new Arrow(ArrowHead.wood, 75, Fletching.goose);
+
+    public static Arrow CreateMarksmanArrow() => new Arrow(ArrowHead.steel, 65, Fletching.goose);
 }
 
 enum ArrowHead
