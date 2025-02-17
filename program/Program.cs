@@ -38,4 +38,7 @@
 // SimulasSoup simulasSoup = new SimulasSoup();
 
 // Level 18
-VinFletchersArrows vinFletchersArrows = new VinFletchersArrows();
+// VinFletchersArrows vinFletchersArrows = new VinFletchersArrows();
+
+// Level 24 Boss Battle
+ThePoint thePoint = new ThePoint();
