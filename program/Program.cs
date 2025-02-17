@@ -41,4 +41,7 @@
 // VinFletchersArrows vinFletchersArrows = new VinFletchersArrows();
 
 // Level 24 Boss Battle
-ThePoint thePoint = new ThePoint();
+// ThePoint thePoint = new ThePoint();
+
+// Level 24 Boss Battle
+TheColor theColor = new TheColor();
