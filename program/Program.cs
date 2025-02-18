@@ -47,4 +47,7 @@
 // TheColor theColor = new TheColor();
 
 // Level 24 Boss Battle
-TheCard theCard = new TheCard();
+// TheCard theCard = new TheCard();
+
+// Level 24 Boss Battle
+TheLockedDoor theLockedDoor = new TheLockedDoor();
