@@ -44,4 +44,7 @@
 // ThePoint thePoint = new ThePoint();
 
 // Level 24 Boss Battle
-TheColor theColor = new TheColor();
+// TheColor theColor = new TheColor();
+
+// Level 24 Boss Battle
+TheCard theCard = new TheCard();
