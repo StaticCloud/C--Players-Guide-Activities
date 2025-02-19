@@ -50,4 +50,7 @@
 // TheCard theCard = new TheCard();
 
 // Level 24 Boss Battle
-TheLockedDoor theLockedDoor = new TheLockedDoor();
+// TheLockedDoor theLockedDoor = new TheLockedDoor();
+
+// Level 24 Boss Battle
+ThePasswordValidator thePasswordValidator = new ThePasswordValidator();
