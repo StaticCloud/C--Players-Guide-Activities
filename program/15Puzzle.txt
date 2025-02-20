@@ -1,0 +1,17 @@
+Object: Tile
+------------
+CVP: Contains value of tile
+CVP: Contains X position of tile
+CVP: Contains Y position of tile
+
+Object: Grid
+------------
+CVP: Creates grid using tile object (3x3 or 5x5)
+CVP: Updates grid based on user input, including validating user input (i.e. checking if selected tile is adjecent to empty space, updating total moves if move is valid)
+CVP: Checks if tiles are ordered correctly, if so, terminate the game
+CVP: Displays grid
+
+Object: Game
+------------
+CVP: Facilitates main loop of the game
+CVP: Management of grid, including creation, updating, and verifying the correctness of it's tile positions
