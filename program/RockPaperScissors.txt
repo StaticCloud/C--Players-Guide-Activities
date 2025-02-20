@@ -1,0 +1,6 @@
+Object: RPS Game
+----------------
+SVP #1: Anonymously reads user inputs (rock, paper, or scissors) from both players
+SVP #2: Compares user inputs and updates the score (or not if it's a draw)
+SVP #3: Displays the score
+SVP #4: Facilitates main gameplay loop which inclues reading user input, comparing inputs, and displaying the score until the program terminates
