@@ -1,0 +1,6 @@
+Object: Game
+------------
+CVP: Renders the current state of the game (word progress, remaining guesses, etc).
+CVP: Processes user input and either deducts a guess if the letter does not exist in the word, or not if either the letter was in the word or if they already selected the character
+CVP: Initializes game, including random word selection from a dictionary
+CVP: Terminates game if word was correctly guessed, or guess total reaches zero
