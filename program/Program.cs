@@ -53,4 +53,7 @@
 // TheLockedDoor theLockedDoor = new TheLockedDoor();
 
 // Level 24 Boss Battle
-ThePasswordValidator thePasswordValidator = new ThePasswordValidator();
+// ThePasswordValidator thePasswordValidator = new ThePasswordValidator();
+
+// Level 24 Boss Battle
+TicTacToe ttt = new TicTacToe();
