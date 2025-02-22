@@ -59,4 +59,7 @@
 // TicTacToe ttt = new TicTacToe();
 
 // Level 25 Challenge
-PackingInventory packingInventory = new PackingInventory();
+// PackingInventory packingInventory = new PackingInventory();
+
+// Level 26
+TheOldRobot theOldRobot = new TheOldRobot();
