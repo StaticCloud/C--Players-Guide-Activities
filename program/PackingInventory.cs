@@ -11,6 +11,7 @@
 
         while (true)
         {
+            Console.WriteLine(pack.ToString());
             Console.Write("Please select an item to add to your inventory (arrow, bow, rope, water, food, sword): ");
             input = Console.ReadLine().ToLower();
 
@@ -31,10 +32,12 @@
     }
 }
 
-class InventoryItem
+abstract class InventoryItem
 {
     public double Weight { get; }
     public double Volume { get; }
+
+    public abstract override string ToString();
 
     public InventoryItem(double weight, double volume)
     {
@@ -46,31 +49,37 @@ class InventoryItem
 class Arrow : InventoryItem
 {
     public Arrow() : base(0.1, 0.05) { }
+    public override string ToString() => "Arrow";
 }
 
 class Bow : InventoryItem
 {
     public Bow() : base(1, 4) { }
+    public override string ToString() => "Bow";
 }
 
 class Rope : InventoryItem
 {
     public Rope() : base(1, 1.5) { }
+    public override string ToString() => "Rope";
 }
 
 class Water : InventoryItem
 {
     public Water() : base(2, 3) { }
+    public override string ToString() => "Water";
 }
 
 class Food : InventoryItem
 {
     public Food() : base(1, 0.5) { }
+    public override string ToString() => "Food";
 }
 
 class Sword : InventoryItem
 {
     public Sword() : base(5, 3) { }
+    public override string ToString() => "Sword";
 }
 
 class Pack
@@ -88,6 +97,18 @@ class Pack
         _totalItems = totalItems;
 
         items = new InventoryItem[_totalItems];
+    }
+
+    public override string ToString()
+    {
+        string output = "Pack containing:";
+
+        foreach(InventoryItem item in  items)
+        {
+            output += $" {item.ToString()}";
+        }
+
+        return output;
     }
 
     public bool Add(InventoryItem item)
