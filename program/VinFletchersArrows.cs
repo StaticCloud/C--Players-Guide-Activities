@@ -81,7 +81,8 @@
 
 }
 
-class Arrow
+// Commented out to fix global namespace error in PackingInventory.cs
+// class Arrow
 {
     private ArrowHead ArrowHead { get; set; }
     private int ShaftLength { get; set; }

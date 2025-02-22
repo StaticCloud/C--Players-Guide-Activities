@@ -56,4 +56,7 @@
 // ThePasswordValidator thePasswordValidator = new ThePasswordValidator();
 
 // Level 24 Boss Battle
-TicTacToe ttt = new TicTacToe();
+// TicTacToe ttt = new TicTacToe();
+
+// Level 25 Challenge
+PackingInventory packingInventory = new PackingInventory();
