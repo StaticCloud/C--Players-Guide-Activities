@@ -68,4 +68,7 @@
 // RoomCoordinates roomCoordinates = new RoomCoordinates();
 
 // Level 29
-WarPreparations warPreparations = new WarPreparations();
+// WarPreparations warPreparations = new WarPreparations();
+
+// Level 30
+ColoredItems coloredItems = new ColoredItems();
