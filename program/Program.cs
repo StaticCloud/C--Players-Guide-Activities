@@ -65,4 +65,7 @@
 // TheOldRobot theOldRobot = new TheOldRobot();
 
 // Level 28
-RoomCoordinates roomCoordinates = new RoomCoordinates();
+// RoomCoordinates roomCoordinates = new RoomCoordinates();
+
+// Level 29
+WarPreparations warPreparations = new WarPreparations();
