@@ -1,6 +1,6 @@
 ﻿internal class TheOldRobot
 {
-    RobotCommand command;
+    IRobotCommand command;
     int index;
     string input;
     Robot robot;
@@ -36,11 +36,11 @@ class Robot
     public int X { get; set; }
     public int Y { get; set; }
     public bool IsPowered { get; set; }
-    public RobotCommand?[] Commands { get; } = new RobotCommand?[3];
+    public IRobotCommand?[] Commands { get; } = new IRobotCommand?[3];
 
     public void Run()
     {
-        foreach (RobotCommand? command in Commands)
+        foreach (IRobotCommand? command in Commands)
         {
             command?.Run(this);
             Console.WriteLine($"[{X} {Y} {IsPowered}]");
@@ -48,30 +48,30 @@ class Robot
     }
 }
 
-abstract class RobotCommand
+interface IRobotCommand
 {
-    public abstract void Run(Robot robot);
+    void Run(Robot robot);
 }
 
-class OnCommand : RobotCommand
+class OnCommand : IRobotCommand
 {
-    public override void Run(Robot robot)
+    public void Run(Robot robot)
     {
         robot.IsPowered = true;
     }
 }
 
-class OffCommand : RobotCommand
+class OffCommand : IRobotCommand
 {
-    public override void Run(Robot robot)
+    public void Run(Robot robot)
     {
         robot.IsPowered = false;
     }
 }
 
-class NorthCommand : RobotCommand
+class NorthCommand : IRobotCommand
 {
-    public override void Run(Robot robot)
+    public void Run(Robot robot)
     {
         if (robot.IsPowered) 
         {
@@ -80,9 +80,9 @@ class NorthCommand : RobotCommand
     }
 }
 
-class WestCommand : RobotCommand
+class WestCommand : IRobotCommand
 {
-    public override void Run(Robot robot)
+    public void Run(Robot robot)
     {
         if (robot.IsPowered)
         {
@@ -91,9 +91,9 @@ class WestCommand : RobotCommand
     }
 }
 
-class SouthCommand : RobotCommand
+class SouthCommand : IRobotCommand
 {
-    public override void Run(Robot robot)
+    public void Run(Robot robot)
     {
         if (robot.IsPowered)
         {
@@ -102,9 +102,9 @@ class SouthCommand : RobotCommand
     }
 }
 
-class EastCommand : RobotCommand
+class EastCommand : IRobotCommand
 {
-    public override void Run(Robot robot)
+    public void Run(Robot robot)
     {
         if (robot.IsPowered)
         {
