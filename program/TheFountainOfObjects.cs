@@ -1,37 +1,51 @@
-﻿internal class TheFountainOfObjects
-{
-    public TheFountainOfObjects()
-    {
-        Game game;
-
-        Console.WriteLine("Select a room size (small, medium, large): ");
-        string input = Console.ReadLine();
-
-        switch (input.ToLower())
-        {
-            case "small":
-                game = new Game(4, 4);
-                break;
-            case "medium":
-                game = new Game(6, 6);
-                break;
-            case "large":
-                game = new Game(8, 8);
-                break;
-            default:
-                game = new Game(8, 8);
-                break;
-        }
-
-        game.Run();
-    }
-}
-
-interface IRoom
+﻿interface IRoom
 {
     public string GetStatus(bool activated);
     public bool IsFountain { get; init; }
     public bool CheckForPit { get; init; }
+}
+
+class Player
+{
+    public int X { get; set; } = 0;
+    public int Y { get; set; } = 0;
+}
+
+class Room : IRoom
+{
+    public virtual bool IsFountain { get; init; } = false;
+    public virtual bool CheckForPit { get; init; } = false;
+
+    public virtual string GetStatus(bool activated)
+    {
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        return activated ? "The Fountain of Objects has been reactivated, make your way to the entrance!" : "You listen for the Fountain of Objects, you hear nothing.";
+    }
+}
+
+class Pit : Room
+{
+    public override bool CheckForPit { get; init; } = true;
+}
+
+class Entrance : Room
+{
+    public override string GetStatus(bool activated)
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+        return activated ? "The Fountain of Objects has been reactivated, and you have esacaped with your life!" : "You see light coming from the cavern entrance.";
+    }
+}
+
+class Fountain : Room
+{
+    public override bool IsFountain { get; init; } = true;
+
+    public override string GetStatus(bool activated)
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        return activated ? "You hear the rushing waters from the Fountain of Objects. It has been reactivated!" : "You hear water dripping from this room. The Fountain of Objects is here!";
+    }
 }
 
 class Game
@@ -46,7 +60,7 @@ class Game
         IsActivated = false;
         Rooms = new Room[Width, Height];
         Player = new Player();
-        Dimensions.Width = Width; 
+        Dimensions.Width = Width;
         Dimensions.Height = Height;
 
         BuildRooms();
@@ -81,7 +95,7 @@ class Game
         {
             Rooms[0, 3] = new Pit();
         }
-        
+
         if (Dimensions.Width >= 6)
         {
             Rooms[4, 5] = new Pit();
@@ -103,10 +117,11 @@ class Game
             {
                 Console.Write('|');
 
-                if (Player.X == j && Player.Y == i) 
+                if (Player.X == j && Player.Y == i)
                 {
                     Console.Write(" O ");
-                } else
+                }
+                else
                 {
                     Console.Write("   ");
                 }
@@ -158,11 +173,16 @@ class Game
         Console.WriteLine(GetRoom().GetStatus(IsActivated));
     }
 
-    public void DisplayVictoryScreen()
+    public void DisplayGameStatus()
     {
         RenderGrid();
         DisplayPosition();
         CheckActivated();
+    }
+
+    public void DisplayVictoryScreen()
+    {
+        DisplayGameStatus();
 
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("You win!");
@@ -183,9 +203,7 @@ class Game
     {
         while (CheckWinningCondition() == false)
         {
-            RenderGrid();
-            DisplayPosition();
-            CheckActivated();
+            DisplayGameStatus();
 
             if (GetRoom().CheckForPit) break;
 
@@ -203,46 +221,32 @@ class Game
     }
 }
 
-class Player
+class TheFountainOfObjects
 {
-    public int X { get; set; } = 0;
-    public int Y { get; set; } = 0;
-}
-
-class Room : IRoom
-{
-    public virtual bool IsFountain { get; init; } = false;
-    public virtual bool CheckForPit { get; init; } = false;
-
-    public virtual string GetStatus(bool activated)
+    public TheFountainOfObjects()
     {
-        Console.ForegroundColor = ConsoleColor.DarkGray;
-        return activated ? "The Fountain of Objects has been reactivated, make your way to the entrance!" : "You listen for the Fountain of Objects, you hear nothing.";
-    }
-}
+        Game game;
 
-class Pit : Room
-{
-    public override bool CheckForPit { get; init; } = true;
-}
+        Console.WriteLine("Select a room size (small, medium, large): ");
+        string input = Console.ReadLine();
 
-class Entrance : Room
-{
-    public override string GetStatus(bool activated)
-    {
-        Console.ForegroundColor = ConsoleColor.White;
-        return activated ? "The Fountain of Objects has been reactivated, and you have esacaped with your life!" : "You see light coming from the cavern entrance.";
-    }
-}
+        switch (input.ToLower())
+        {
+            case "small":
+                game = new Game(4, 4);
+                break;
+            case "medium":
+                game = new Game(6, 6);
+                break;
+            case "large":
+                game = new Game(8, 8);
+                break;
+            default:
+                game = new Game(8, 8);
+                break;
+        }
 
-class Fountain : Room
-{
-    public override bool IsFountain { get; init; } = true;
-
-    public override string GetStatus(bool activated)
-    {
-        Console.ForegroundColor = ConsoleColor.Blue;
-        return activated ? "You hear the rushing waters from the Fountain of Objects. It has been reactivated!" : "You hear water dripping from this room. The Fountain of Objects is here!";
+        game.Run();
     }
 }
 
