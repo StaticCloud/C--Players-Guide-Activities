@@ -71,4 +71,7 @@
 // WarPreparations warPreparations = new WarPreparations();
 
 // Level 30
-ColoredItems coloredItems = new ColoredItems();
+// ColoredItems coloredItems = new ColoredItems();
+
+// Level 31
+TheFountainOfObjects theFountainOfObjects = new TheFountainOfObjects();
