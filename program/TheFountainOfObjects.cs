@@ -1,8 +1,28 @@
 ﻿internal class TheFountainOfObjects
 {
-    public TheFountainOfObjects() 
-    { 
-        Game game = new Game();
+    public TheFountainOfObjects()
+    {
+        Game game;
+
+        Console.WriteLine("Select a room size (small, medium, large): ");
+        string input = Console.ReadLine();
+
+        switch (input.ToLower())
+        {
+            case "small":
+                game = new Game(4, 4);
+                break;
+            case "medium":
+                game = new Game(6, 6);
+                break;
+            case "large":
+                game = new Game(8, 8);
+                break;
+            default:
+                game = new Game(8, 8);
+                break;
+        }
+
         game.Run();
     }
 }
@@ -18,28 +38,34 @@ class Game
     private bool IsActivated;
     private IRoom[,] Rooms;
     private Player Player;
+    private (int Height, int Width) Dimensions;
 
-    public Game()
+    public Game(int Width, int Height)
     {
         IsActivated = false;
-        Rooms = new Room[4, 4];
+        Rooms = new Room[Width, Height];
         Player = new Player();
+        Dimensions.Width = Width; 
+        Dimensions.Height = Height;
 
         BuildRooms();
     }
 
     public void BuildRooms()
     {
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < Dimensions.Height; i++)
+        {
+            for (int j = 0; j < Dimensions.Width; j++)
+            {
                 if (i == 0 && j == 0)
                 {
                     Rooms[i, j] = new Entrance();
                 }
-                else if (i == 3 && j == 3)
+                else if (i == Dimensions.Height - 1 && j == Dimensions.Width - 1)
                 {
                     Rooms[i, j] = new Fountain();
-                } else
+                }
+                else
                 {
                     Rooms[i, j] = new Room();
                 }
@@ -129,7 +155,7 @@ class Room : IRoom
 
 class Entrance : Room
 {
-    public override string GetStatus(bool activated) 
+    public override string GetStatus(bool activated)
     {
         Console.ForegroundColor = ConsoleColor.White;
         return activated ? "The Fountain of Objects has been reactivated, and you have esacaped with your life!" : "You see light coming from the cavern entrance.";
@@ -140,7 +166,7 @@ class Fountain : Room
 {
     public override bool IsFountain { get; init; } = true;
 
-    public override string GetStatus(bool activated) 
+    public override string GetStatus(bool activated)
     {
         Console.ForegroundColor = ConsoleColor.Blue;
         return activated ? "You hear the rushing waters from the Fountain of Objects. It has been reactivated!" : "You hear water dripping from this room. The Fountain of Objects is here!";
