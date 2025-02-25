@@ -73,6 +73,29 @@ class Game
         }
     }
 
+    public void RenderGrid()
+    {
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.White;
+        for (int i = 0; i < Dimensions.Height; i++)
+        {
+            for (int j = 0; j < Dimensions.Width; j++)
+            {
+                Console.Write('|');
+
+                if (Player.X == j && Player.Y == i) 
+                {
+                    Console.Write(" O ");
+                } else
+                {
+                    Console.Write("   ");
+                }
+            }
+            Console.WriteLine('|');
+            Console.WriteLine(new String('-', (Dimensions.Width * 4) + 1));
+        }
+    }
+
     public void ReadInput()
     {
         Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -80,19 +103,19 @@ class Game
         string command = Console.ReadLine();
         if (command == "move north")
         {
-            Player.Y -= 1;
+            Player.Y = Player.Y > 0 ? Player.Y -= 1 : Player.Y;
         }
         else if (command == "move south")
         {
-            Player.Y += 1;
+            Player.Y = Player.Y < 3 ? Player.Y += 1 : Player.Y;
         }
         else if (command == "move east")
         {
-            Player.X += 1;
+            Player.X = Player.X < 3 ? Player.X += 1 : Player.X;
         }
         else if (command == "move west")
         {
-            Player.X -= 1;
+            Player.X = Player.X > 0 ? Player.X -= 1 : Player.X;
         }
         else if (command == "enable fountain")
         {
@@ -115,6 +138,16 @@ class Game
         Console.WriteLine(GetRoom().GetStatus(IsActivated));
     }
 
+    public void DisplayVictoryStatus()
+    {
+        RenderGrid();
+        DisplayPosition();
+        CheckActivated();
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("You win!");
+    }
+
     public IRoom GetRoom() => Rooms[Player.Y, Player.X];
 
     public bool CheckWinningCondition() => IsActivated && Player.X == 0 && Player.Y == 0;
@@ -123,16 +156,13 @@ class Game
     {
         while (CheckWinningCondition() == false)
         {
+            RenderGrid();
             DisplayPosition();
             CheckActivated();
             ReadInput();
         }
 
-        DisplayPosition();
-        CheckActivated();
-
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("You win!");
+        DisplayVictoryStatus();
     }
 }
 
