@@ -54,6 +54,7 @@ class Game
     private IRoom[,] Rooms;
     private Player Player;
     private (int Height, int Width) Dimensions;
+    private DateTime StartTime;
 
     public Game(int Width, int Height)
     {
@@ -62,6 +63,7 @@ class Game
         Player = new Player();
         Dimensions.Width = Width;
         Dimensions.Height = Height;
+        StartTime = DateTime.Now;
 
         BuildRooms();
         BuildPits();
@@ -195,6 +197,12 @@ class Game
         Console.WriteLine("You have fallen into a pit. Your journey has come to an unfortunate end. You lose.");
     }
 
+    public void DisplayTotalTime()
+    {
+        TimeSpan TotalTime = DateTime.Now - StartTime;
+        Console.WriteLine($"You have played for a total of {TotalTime.Hours}h {TotalTime.Minutes}m {TotalTime.Seconds}s.");
+    }
+
     public IRoom GetRoom() => Rooms[Player.Y, Player.X];
 
     public bool CheckWinningCondition() => IsActivated && Player.X == 0 && Player.Y == 0;
@@ -218,6 +226,8 @@ class Game
         {
             DisplayLossScreen();
         }
+
+        DisplayTotalTime();
     }
 }
 

@@ -29,7 +29,7 @@
 // Countdown countdown = new Countdown();
 
 // Level 14 Boss Battle
-HuntingTheManicore huntingTheManicore = new HuntingTheManicore();
+// HuntingTheManicore huntingTheManicore = new HuntingTheManicore();
 
 // Level 16 Challenge
 // SimulasTest simulasTest = new SimulasTest();
@@ -74,4 +74,4 @@ HuntingTheManicore huntingTheManicore = new HuntingTheManicore();
 // ColoredItems coloredItems = new ColoredItems();
 
 // Level 31
-// TheFountainOfObjects theFountainOfObjects = new TheFountainOfObjects();
+TheFountainOfObjects theFountainOfObjects = new TheFountainOfObjects();
