@@ -1,16 +1,14 @@
 ﻿internal class TheOldRobot
 {
     IRobotCommand command;
-    int index;
     string input;
     Robot robot;
 
     public TheOldRobot() 
     {
-        index = 0;
         robot = new Robot();
 
-        while (index < 3)
+        while (input != "stop")
         {
             input = Console.ReadLine();
 
@@ -21,10 +19,11 @@
                 "north" => new NorthCommand(),
                 "south" => new SouthCommand(),
                 "east" => new EastCommand(),
-                "west" => new WestCommand()
+                "west" => new WestCommand(),
+                "stop" => new OffCommand()
             };
 
-            robot.Commands[index++] = command;
+            robot.Commands?.Add(command);
         }
 
         robot.Run();
@@ -36,7 +35,7 @@ class Robot
     public int X { get; set; }
     public int Y { get; set; }
     public bool IsPowered { get; set; }
-    public IRobotCommand?[] Commands { get; } = new IRobotCommand?[3];
+    public List<IRobotCommand>? Commands = new List<IRobotCommand>();
 
     public void Run()
     {

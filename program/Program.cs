@@ -62,7 +62,7 @@
 // PackingInventory packingInventory = new PackingInventory();
 
 // Level 26
-// TheOldRobot theOldRobot = new TheOldRobot();
+TheOldRobot theOldRobot = new TheOldRobot();
 
 // Level 28
 // RoomCoordinates roomCoordinates = new RoomCoordinates();
@@ -74,4 +74,4 @@
 // ColoredItems coloredItems = new ColoredItems();
 
 // Level 31
-TheFountainOfObjects theFountainOfObjects = new TheFountainOfObjects();
+// TheFountainOfObjects theFountainOfObjects = new TheFountainOfObjects();
