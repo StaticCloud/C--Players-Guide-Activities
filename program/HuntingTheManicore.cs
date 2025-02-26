@@ -1,7 +1,7 @@
-﻿internal class HuntingTheManicore
+﻿class HuntingTheManicore
 {
     public HuntingTheManicore() {
-        int distance = getDistance();
+        int distance = new Random().Next(101);
         int cityHealth = 15;
         int manticoreHealth = 10;
         int round = 1;
@@ -41,22 +41,6 @@
             Console.WriteLine("The city of Consolas has been destroyed by the Manticore.");
         }
     }
-
-    int getDistance()
-    {
-        int distance = -1;
-
-        while (distance < 0 || distance > 100)
-        {
-            Console.Write("Enter the Manticore's distance from the city (0 - 100): ");
-            distance = int.Parse(Console.ReadLine());
-        }
-
-        Console.Clear();
-
-        return distance;
-    }
-
     int getRange()
     {
         int range = -1;
