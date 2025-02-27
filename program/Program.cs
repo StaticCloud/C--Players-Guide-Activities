@@ -84,7 +84,10 @@ namespace Program
             // TheFountainOfObjects theFountainOfObjects = new TheFountainOfObjects();
 
             // Level 33
-            TheFeud theFeud = new TheFeud();
+            // TheFeud theFeud = new TheFeud();
+
+            // Level 34
+            SaferNumberCrunching saferNumberCrunching = new SaferNumberCrunching();
         }
     }
 }
