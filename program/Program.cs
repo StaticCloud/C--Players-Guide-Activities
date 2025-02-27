@@ -90,7 +90,10 @@ namespace Program
             // SaferNumberCrunching saferNumberCrunching = new SaferNumberCrunching();
 
             // Level 34
-            BetterRandom betterRandom = new BetterRandom();
+            // BetterRandom betterRandom = new BetterRandom();
+
+            // Level 35
+            ExeptisGame exeptisGame = new ExeptisGame();
         }
     }
 }
