@@ -87,7 +87,10 @@ namespace Program
             // TheFeud theFeud = new TheFeud();
 
             // Level 34
-            SaferNumberCrunching saferNumberCrunching = new SaferNumberCrunching();
+            // SaferNumberCrunching saferNumberCrunching = new SaferNumberCrunching();
+
+            // Level 34
+            BetterRandom betterRandom = new BetterRandom();
         }
     }
 }
