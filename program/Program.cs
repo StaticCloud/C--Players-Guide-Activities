@@ -93,7 +93,11 @@ namespace Program
             // BetterRandom betterRandom = new BetterRandom();
 
             // Level 35
-            ExeptisGame exeptisGame = new ExeptisGame();
+            // ExeptisGame exeptisGame = new ExeptisGame();
+
+            // Level 36
+            TheSieve theSieve = new TheSieve();
+
         }
     }
 }
