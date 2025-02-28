@@ -15,7 +15,7 @@
 
             int number = Convert.ToInt32(Console.ReadLine());
 
-            Func<int, bool> func = option switch
+            Predicate<int> func = option switch
             {
                 1 => Sieve.IsEven,
                 2 => Sieve.IsPositive,
@@ -30,9 +30,9 @@
 
     class Sieve
     {
-        Func<int, bool> Func;
+        Predicate<int> Func;
 
-        public Sieve(Func<int, bool> func)
+        public Sieve(Predicate<int> func)
         { 
             Func = func;
         }
@@ -42,8 +42,8 @@
             return Func(number);
         }
 
-        public static Func<int, bool> IsEven = (num) => num % 2 == 0;
-        public static Func<int, bool> IsPositive = (num) => num > 0;
-        public static Func<int, bool> IsMultiple = (num) => num % 10 == 0;
+        public static Predicate<int> IsEven = (num) => num % 2 == 0;
+        public static Predicate<int> IsPositive = (num) => num > 0;
+        public static Predicate<int> IsMultiple = (num) => num % 10 == 0;
     }
 }
