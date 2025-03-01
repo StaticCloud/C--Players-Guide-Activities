@@ -99,7 +99,10 @@ namespace Program
             // TheSieve theSieve = new TheSieve();
 
             // Level 37
-            CharberryTrees charberryTrees = new CharberryTrees();
+            // CharberryTrees charberryTrees = new CharberryTrees();
+
+            // Level 39
+            TheLongGame theLongGame = new TheLongGame();
         }
     }
 }
