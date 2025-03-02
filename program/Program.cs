@@ -102,7 +102,10 @@ namespace Program
             // CharberryTrees charberryTrees = new CharberryTrees();
 
             // Level 39
-            TheLongGame theLongGame = new TheLongGame();
+            // TheLongGame theLongGame = new TheLongGame();
+
+            // Level 40
+            ThePotionMastersOfPattern thePotionMastersOfPattern = new ThePotionMastersOfPattern();
         }
     }
 }
