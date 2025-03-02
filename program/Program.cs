@@ -105,7 +105,10 @@ namespace Program
             // TheLongGame theLongGame = new TheLongGame();
 
             // Level 40
-            ThePotionMastersOfPattern thePotionMastersOfPattern = new ThePotionMastersOfPattern();
+            // ThePotionMastersOfPattern thePotionMastersOfPattern = new ThePotionMastersOfPattern();
+
+            // Level 41
+            NavigatingOperandCity navigatingOperandCity = new NavigatingOperandCity();
         }
     }
 }
