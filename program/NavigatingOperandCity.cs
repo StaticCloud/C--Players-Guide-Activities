@@ -13,7 +13,8 @@
 
             blockCoordinate = blockCoordinate + Direction.North;
 
-            Console.WriteLine(blockCoordinate.ToString());
+            Console.WriteLine($"Row: {blockCoordinate[0]}");
+            Console.WriteLine($"Col: {blockCoordinate[1]}");
         }
     }
 
@@ -29,6 +30,15 @@
                 Direction.South => new BlockCoordinate(blockCoordinate.Row - 1, blockCoordinate.Column),
                 Direction.West => new BlockCoordinate(blockCoordinate.Row, blockCoordinate.Column - 1)
             };
+        }
+
+        public int this[int index]
+        {
+            get
+            {
+                if (index == 0) return Row;
+                else return Column;
+            }
         }
     };
     public record BlockOffset(int RowOffset, int ColumnOffset);
