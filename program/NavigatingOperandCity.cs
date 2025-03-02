@@ -15,6 +15,10 @@
 
             Console.WriteLine($"Row: {blockCoordinate[0]}");
             Console.WriteLine($"Col: {blockCoordinate[1]}");
+
+            blockOffset = (BlockOffset)Direction.South;
+
+            Console.WriteLine(blockOffset.ToString());
         }
     }
 
@@ -41,7 +45,19 @@
             }
         }
     };
-    public record BlockOffset(int RowOffset, int ColumnOffset);
+    public record BlockOffset(int RowOffset, int ColumnOffset)
+    {
+        public static explicit operator BlockOffset(Direction direction)
+        {
+            return direction switch
+            {
+                Direction.North => new BlockOffset(1, 0),
+                Direction.East => new BlockOffset(0, 1),
+                Direction.South => new BlockOffset(-1, 0),
+                Direction.West => new BlockOffset(0, -1)
+            };
+        }
+    };
 
     public enum Direction { North, East, South, West }
 }
