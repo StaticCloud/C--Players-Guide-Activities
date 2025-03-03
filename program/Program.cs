@@ -108,7 +108,10 @@ namespace Program
             // ThePotionMastersOfPattern thePotionMastersOfPattern = new ThePotionMastersOfPattern();
 
             // Level 41
-            NavigatingOperandCity navigatingOperandCity = new NavigatingOperandCity();
+            // NavigatingOperandCity navigatingOperandCity = new NavigatingOperandCity();
+
+            // Level 42
+            TheThreeLenses theThreeLenses = new TheThreeLenses();
         }
     }
 }
