@@ -111,7 +111,10 @@ namespace Program
             // NavigatingOperandCity navigatingOperandCity = new NavigatingOperandCity();
 
             // Level 42
-            TheThreeLenses theThreeLenses = new TheThreeLenses();
+            // TheThreeLenses theThreeLenses = new TheThreeLenses();
+
+            // Level 43
+            TheRepeatingSystem theRepeatingSystem = new TheRepeatingSystem();
         }
     }
 }
