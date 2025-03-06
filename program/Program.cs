@@ -114,7 +114,10 @@ namespace Program
             // TheThreeLenses theThreeLenses = new TheThreeLenses();
 
             // Level 43
-            TheRepeatingSystem theRepeatingSystem = new TheRepeatingSystem();
+            // TheRepeatingSystem theRepeatingSystem = new TheRepeatingSystem();
+
+            // Level 44
+            AsynchronousRandomWords asynchronousRandomWords = new AsynchronousRandomWords();
         }
     }
 }
