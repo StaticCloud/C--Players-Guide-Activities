@@ -120,7 +120,10 @@ namespace Program
             // AsynchronousRandomWords asynchronousRandomWords = new AsynchronousRandomWords();
 
             // Level 45
-            UniterOfAdds uniterOfAdds = new UniterOfAdds();
+            // UniterOfAdds uniterOfAdds = new UniterOfAdds();
+
+            // Level 45
+            TheRobotFactory theRobotFactory = new TheRobotFactory();
         }
     }
 }
