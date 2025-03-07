@@ -117,7 +117,10 @@ namespace Program
             // TheRepeatingSystem theRepeatingSystem = new TheRepeatingSystem();
 
             // Level 44
-            AsynchronousRandomWords asynchronousRandomWords = new AsynchronousRandomWords();
+            // AsynchronousRandomWords asynchronousRandomWords = new AsynchronousRandomWords();
+
+            // Level 45
+            UniterOfAdds uniterOfAdds = new UniterOfAdds();
         }
     }
 }
